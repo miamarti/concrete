@@ -1,4 +1,10 @@
 'use strict';
+var moment = moment || {};
+
+moment.locale('pt-br');
+String.prototype.formatDate = function () {
+    return moment(this.toString()).format('LL');
+};
 
 /**
  * @ngdoc overview
@@ -8,8 +14,7 @@
  *
  * Main module of the application.
  */
-angular
-  .module('concreteDevApp', [
+angular.module('concreteDevApp', [
     'ngAnimate',
     'ngAria',
     'ngCookies',
@@ -18,18 +23,11 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  ]).config(function ($routeProvider) {
+    $routeProvider.when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
+    }).otherwise({
         redirectTo: '/'
-      });
-  });
+    });
+});

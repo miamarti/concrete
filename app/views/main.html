@@ -1,57 +1,49 @@
-<div ng-init='shots = [{
-    id: 2075611,
-    title: "Fattys pt. II",
-    description: "<p>Just sent cans to print. Quenching your thirst so soon...</p>",
-    height: 600,
-    width: 800,
-    likes_count: 337,
-    comments_count: 21,
-    rebounds_count: 0,
-    url: "http://dribbble.com/shots/2075611-Fatty-s-pt-II",
-    short_url: "http://drbl.in/oNFF",
-    views_count: 2249,
-    rebound_source_id: 1508278,
-    image_url: "https://d13yacurqjgara.cloudfront.net/users/52758/screenshots/2075611/fattys_can_j_fletcher.jpg",
-    image_teaser_url: "https://d13yacurqjgara.cloudfront.net/users/52758/screenshots/2075611/fattys_can_j_fletcher_teaser.jpg",
-    image_400_url: "https://d13yacurqjgara.cloudfront.net/users/52758/screenshots/2075611/fattys_can_j_fletcher_1x.jpg",
-    created_at: "2015/05/22 13:36:24 -0400"
-}, {
-    id: 2075538,
-    title: "Hillary!",
-    description: "<p>Hillary Clinton Aims to Capture the Cool AD: Rodrigo Honeywell
-    <br />http://www.nytimes.com/2015/05/24/fashion/hillary-clinton-aims-to-capture-the-cool.html?ref=fashion</p>",
-    height: 600,
-    width: 800,
-    likes_count: 153,
-    comments_count: 9,
-    rebounds_count: 0,
-    url: "http://dribbble.com/shots/2075538-Hillary",
-    short_url: "http://drbl.in/oNEk",
-    views_count: 1158,
-    rebound_source_id: null,
-    image_url: "https://d13yacurqjgara.cloudfront.net/users/2046/screenshots/2075538/hill_final.jpg",
-    image_teaser_url: "https://d13yacurqjgara.cloudfront.net/users/2046/screenshots/2075538/hill_final_teaser.jpg",
-    image_400_url: "https://d13yacurqjgara.cloudfront.net/users/2046/screenshots/2075538/hill_final_1x.jpg",
-    created_at: "2015/05/22 12:51:39 -0400"
-}, {
-    id: 2075352,
-    title: "Streamup",
-    description: "<p>Didnt make the cut, on to the next!</p>",
-    height: 600,
-    width: 800,
-    likes_count: 138,
-    comments_count: 7,
-    rebounds_count: 0,
-    url: "http://dribbble.com/shots/2075352-Streamup",
-    short_url: "http://drbl.in/oNAG",
-    views_count: 890,
-    rebound_source_id: null,
-    image_url: "https://d13yacurqjgara.cloudfront.net/users/31752/screenshots/2075352/streamup.png",
-    image_teaser_url: "https://d13yacurqjgara.cloudfront.net/users/31752/screenshots/2075352/streamup_teaser.png",
-    image_400_url: "https://d13yacurqjgara.cloudfront.net/users/31752/screenshots/2075352/streamup_1x.png",
-    created_at: "2015/05/22 11:28:11 -0400"
-}]'>
-
-    <div class="ui special cards" infiniteScroll="loadMore()">
-        <div ng-concrete-shot class="card" data-ng-repeat="data in shots" id="card-{{$index}}"></div>
+<div class="ui special cards" infinite-scroll="loadMore()">
+    <div ng-concrete-shot class="card" data-ng-repeat="data in shots" id="card-{{$index}}"></div>
+    <div class="ui inverted dimmer" data-ng-class="loading">
+        <div class="ui text loader">Loading</div>
     </div>
+</div>
+
+<div class="ui basic shot modal">
+    <div class="header">
+        {{slectShot.title}}
+    </div>
+    <div class="content">
+        <div class="image">
+            <img class="ui medium rounded image" src="{{slectShot.images.normal}}">
+        </div>
+        <div class="description">
+            <div>{{slectShot.created_at.formatDate()}}</div>
+            <div ng-concrete-html="slectShot.description"></div>
+            <h4 class="ui horizontal header divider"><i class="user icon inverted"></i>Artista</h4>
+
+            <div class="ui feed">
+                <div class="event">
+                    <div class="label">
+                        <img src="{{slectShot.user.avatar_url}}">
+                    </div>
+                    <div class="content">
+                        <div class="summary">
+                            by <a class="user">{{slectShot.user.name}}</a>
+                            <div class="date" ng-concrete-html="slectShot.user.bio"></div>
+                        </div>
+                        <div class="meta">
+                            <a class="like">
+                                <i class="like icon"></i> {{slectShot.user.likes_count}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="actions">
+        <div class="one fluid ui inverted buttons">
+            <div class="ui red basic cancel inverted button">
+                <i class="remove icon"></i> Fechar
+            </div>
+        </div>
+    </div>
+</div>

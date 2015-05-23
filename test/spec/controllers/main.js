@@ -2,21 +2,30 @@
 
 describe('Controller: MainCtrl', function () {
 
-  // load the controller's module
-  beforeEach(module('concreteDevApp'));
+    // load the controller's module
+    beforeEach(module('concreteDevApp'));
 
-  var MainCtrl,
-    scope;
+    // Initialize the controller and a mock scope
+    beforeEach(inject(function ($controller, $rootScope) {
+        scope = $rootScope.$new();
+        scope.page = 1;
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
-      $scope: scope
+        MainCtrl = $controller('MainCtrl', {
+            $scope: scope
+        });
+    }));
+
+    it('should attach a list of awesomeThings to the scope', function () {
+        expect(MainCtrl).toBeDefined();
     });
-  }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
-  });
+    it('checking the calculation of numerology', function () {
+        scope.getDetails(2075611);
+        console.log($scope.slectShot);
+        //expect(scope.kabala.nameMap).toEqual('15131 51819556 959 461 134531');
+    });
+
+    it('checking the reset calculation numerology', function () {
+        //expect(scope.kabala).toEqual(null);
+    });
 });

@@ -10,6 +10,25 @@ angular.module('concreteDevApp').directive('ngConcreteHtml', [function () {
     };
 }]);
 
+/**
+ * Renders html attributes
+ */
+angular.module('concreteDevApp').directive('ngConcreteHtml', [function () {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            scope.$watch(attrs.ngConcreteHtml, function (value) {
+                if (value != undefined) {
+                    element.context.innerHTML = value;
+                }
+            });
+        }
+    };
+}]);
+
+/**
+ * Renders Concrete Shot's
+ */
 angular.module('concreteDevApp').directive('ngConcreteShot', [function () {
     return {
         restrict: 'A',
@@ -19,16 +38,16 @@ angular.module('concreteDevApp').directive('ngConcreteShot', [function () {
             html += '        <div class="ui dimmer">';
             html += '            <div class="content">';
             html += '                <div class="center">';
-            html += '                    <div class="ui inverted button">Detalhes</div>';
+            html += '                    <div class="ui inverted button" data-ng-click="getDetails(data.id)">Detalhes</div>';
             html += '              </div>';
             html += '          </div>';
             html += '        </div>';
-            html += '       <img src="https://d13yacurqjgara.cloudfront.net/users/52758/screenshots/2075611/fattys_can_j_fletcher_teaser.jpg">';
+            html += '       <img src="{{data.images.teaser}}">';
             html += '   </div>';
             html += '   <div class="content">';
             html += '     <a class="header">{{data.title}}</a>';
             html += '     <div class="meta">';
-            html += '         <span class="date"><ng-concrete-html value="{{data.description}}" class="text-overflow"></ng-concrete-html></span>';
+            html += '         <span class="date text-overflow"><ng-concrete-html value="{{data.description}}" class="text-overflow"></ng-concrete-html></span>';
             html += '     </div>';
             html += '   </div>';
             html += '   <div class="extra content">';
@@ -53,13 +72,22 @@ angular.module('concreteDevApp').directive('ngConcreteShot', [function () {
 }]);
 
 
+/**
+ * Infinite Scroll
+ */
 angular.module('concreteDevApp').directive('infiniteScroll', function () {
-    return function (scope, elm, attr) {
-        var raw = elm[0];
-        elm.bind('scroll', function () {
-            if (raw.scrollTop + raw.offsetHeight >= raw.scrollHeight) {
-                scope.$apply(attr.whenScrolled);
-            }
-        });
+    var runSubmit;
+    return {
+        link: function (scope, element, attrs) {
+            setTimeout(function () {
+                $(window).on('scroll', function () {
+                    if ($(window).scrollTop() + $(window).height() >= $(element).height()) {
+                        runSubmit = setTimeout(function () {
+                            scope.$apply(attrs.infiniteScroll);
+                        }, 900);
+                    }
+                });
+            }, 1000);
+        }
     };
 });

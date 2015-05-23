@@ -434,8 +434,48 @@ body#concrete {
     direction: ltr;
 }
 
-#concrete .ui.cards {
-    margin-left: 15px;
+#concrete .card span.text-overflow {
+    width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: ltr;
+}
+
+#concrete .ui.modal > .content > .image {
+    width: 250px;
+}
+
+#concrete .ui.image.avatar {
+    width: 52px;
+    height: auto;
+    font-size: 0.85714286rem;
+}
+
+#concrete .modal .description {
+    color: #FFF;
+}
+
+#concrete .ui.horizontal.divider {
+    color: #FFF;
+}
+
+#concrete .ui.feed > .event > .content .summary {
+    color: #FFF;
+}
+
+#concrete .ui.feed > .event > .content .meta {
+    color: #FFF;
+}
+
+#concrete .ui.feed > .event > .content .date {
+    color: #FFF;
+    display: table;
+}
+
+#concrete .ui.feed > .event > .content .like {
+    color: #FFF;
 }
 /*--------------
   Transparent
@@ -1758,12 +1798,18 @@ body.progress.animated .ui.progress .bar {
     #concrete .main.container > .tab > .right.rail .sticky {
         width: 200px;
     }
+    #concrete .ui.cards {
+        margin-left: 15px;
+    }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1355px) {
     #concrete .container {
         width: 1000px;
         margin: 0em auto;
+    }
+    #concrete .ui.cards {
+        margin-left: 15px;
     }
 }
 
@@ -1774,6 +1820,9 @@ body.progress.animated .ui.progress .bar {
     #concrete.item .container,
     #concrete.card .container {
         width: 965px;
+    }
+    #concrete .ui.cards {
+        margin-left: 15px;
     }
 }
 /*******************************
