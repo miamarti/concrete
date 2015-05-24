@@ -6,6 +6,11 @@ Veja quais são os destaques do Dribbble a qualquer hora!
 - Carrega as postagens automaticamente;
 - Melhor desempenho.
 
+Para conhecer a versão on-line, acesse [http://miamarti.github.io/concrete/] ou se preferir instale nosso Aplicativo Android seguindo os passos abaixo:
+
 Para instalar o app em seu telefone, acesse [https://goo.gl/NCzU9v] ou leia o QRCode abaixo:
 
 <img src="http://chart.googleapis.com/chart?cht=qr&chs=250x250&choe=UTF-8&chld=H&chl=https://goo.gl/NCzU9v">
+
+----
+
