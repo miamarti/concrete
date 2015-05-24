@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.github.io.miamarti"
+        version   = "2.0.1">
+    <name>CONCRETE SOLUTIONS</name>
+
+    <description>
+	Desafio Concrete Front-end - Dribbble
+    </description>
+
+    <author href="ttps://br.linkedin.com/pub/miller-augusto/2a/38b/832" email="miller.augusto@gmail.com">
+        Miller Augusto S. Martins
+    </author>
+
+    <preference name="permissions" value="none"/>
+
+    <preference name="phonegap-version" value="3.1.0" />
+    <preference name="orientation"      value="default" />
+    <preference name="target-device"    value="universal" />
+    <preference name="fullscreen"       value="true" />
+    <preference name="webviewbounce"    value="false" />
+
+    <icon src="images/logo.b5762d8d.png" />
+    <icon src="images/icon/android-icon-36x36.4ea07bde.png"   gap:platform="android"    gap:density="ldpi" />
+    <icon src="images/icon/android-icon-48x48.4c235cf6.png"   gap:platform="android"    gap:density="mdpi" />
+    <icon src="images/icon/android-icon-72x72.1da4ce72.png"   gap:platform="android"    gap:density="hdpi" />
+    <icon src="images/icon/android-icon-96x96.523ede10.png"  gap:platform="android"    gap:density="xhdpi" />
+    <icon src="images/icon/apple-icon-57x57.89dc47e8.png"            gap:platform="ios"        width="57" height="57" />
+    <icon src="images/icon/apple-icon-72x72.1da4ce72.png"            gap:platform="ios"        width="72" height="72" />
+    <icon src="images/icon/apple-icon-114x114.a3795774.png"         gap:platform="ios"        width="114" height="114" />
+    <icon src="images/icon/apple-icon-144x144.45706531.png"         gap:platform="ios"        width="144" height="144" />
+    <icon src="images/icon/ms-icon-70x70.f024f2a5.png"  gap:platform="winphone" />
+    <icon src="images/icon/ms-icon-150x150.4570000e.png" gap:platform="winphone"   gap:role="background" />
+
+    <gap:splash src="images/screen/android/screen-ldpi-portrait.png"  gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="images/screen/android/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="images/screen/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="images/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
+    <gap:splash src="images/screen/ios/screen-iphone-portrait.png"    gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="images/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="images/screen/ios/screen-ipad-portrait.png"      gap:platform="ios"     width="768" height="1024" />
+    <gap:splash src="images/screen/ios/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
+    <gap:splash src="images/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
+
+</widget>
