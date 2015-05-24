@@ -10,7 +10,7 @@ Para conhecer a versão on-line, acesse [http://miamarti.github.io/concrete/] ou
 
 Para instalar o app em seu telefone, acesse [https://goo.gl/NCzU9v] ou leia o QRCode abaixo:
 
-<p align="center"><img src="http://chart.googleapis.com/chart?cht=qr&chs=250x250&choe=UTF-8&chld=H&chl=https://goo.gl/NCzU9v"></p>
+<img src="http://chart.googleapis.com/chart?cht=qr&chs=250x250&choe=UTF-8&chld=H&chl=https://goo.gl/NCzU9v">
 
 ----
 
