@@ -1,3 +1,6 @@
+'use strict';
+var $ = $ || {};
+
 /**
  * Renders html attributes
  */
@@ -18,7 +21,7 @@ angular.module('concreteDevApp').directive('ngConcreteHtml', [function () {
         restrict: 'A',
         link: function (scope, element, attrs) {
             scope.$watch(attrs.ngConcreteHtml, function (value) {
-                if (value != undefined) {
+                if (value !== undefined) {
                     element.context.innerHTML = value;
                 }
             });

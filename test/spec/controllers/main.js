@@ -1,6 +1,7 @@
 'use strict';
 
 describe('Controller: MainCtrl', function () {
+    var MainCtrl, scope;
 
     // load the controller's module
     beforeEach(module('concreteDevApp'));
@@ -15,17 +16,12 @@ describe('Controller: MainCtrl', function () {
         });
     }));
 
-    it('should attach a list of awesomeThings to the scope', function () {
+    it('can get an instance of MainCtrl', function () {
         expect(MainCtrl).toBeDefined();
     });
 
-    it('checking the calculation of numerology', function () {
-        scope.getDetails(2075611);
-        console.log($scope.slectShot);
-        //expect(scope.kabala.nameMap).toEqual('15131 51819556 959 461 134531');
-    });
-
-    it('checking the reset calculation numerology', function () {
-        //expect(scope.kabala).toEqual(null);
+    it('checking the load more to scroll', function () {
+        scope.loadMore();
+        expect(2).toEqual(scope.page);
     });
 });
