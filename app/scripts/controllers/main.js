@@ -9,7 +9,9 @@ var $ = $ || {};
  * # MainCtrl
  * Controller of the concreteDevApp
  */
-angular.module('concreteDevApp').controller('MainCtrl', function ($scope, dribbbleService) {
+angular.module('concreteDevApp').controller('MainCtrl', function ($scope, dribbbleService, ConfirmFactory) {
+    console.log(ConfirmFactory);
+
     $scope.shots = [];
     $scope.page = 1;
     $scope.slectShot = {};

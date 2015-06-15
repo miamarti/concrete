@@ -14,7 +14,8 @@
     "angular-sanitize": "^1.3.0",
     "angular-touch": "^1.3.0",
     "semantic-ui": "~1.12.3",
-    "moment": "~2.10.3"
+    "moment": "~2.10.3",
+    "ng.serialize": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.0",
